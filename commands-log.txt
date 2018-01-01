@@ -1,0 +1,7 @@
+$ cd meetupz/
+$ lb  //initial loopback setup
+commit..
+
+$ npm install loopback-connector-mongodb --save
+$ lb datasource mongoDS --connector mongoDB
+commit..
