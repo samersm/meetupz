@@ -1,0 +1,11 @@
+$ npm start   //to run a server
+
+  ctrl + c  //to quit the server
+
+$ lb3 <AppName>    //To create a new app
+      or
+        $ mkdir <appname>
+        $ cd <appname>
+        $ lb
+
+$ lb model  //To create a new model

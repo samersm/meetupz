@@ -5,3 +5,6 @@ commit..
 $ npm install loopback-connector-mongodb --save
 $ lb datasource mongoDS --connector mongoDB
 commit..
+
+$ lb model
+commit..
