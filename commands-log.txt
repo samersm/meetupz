@@ -10,5 +10,15 @@ $ lb model
 commit..
 
 $ npm install -g create-react-app
+$ mkdir client_src/
+$ cd client_src/
 $ create-react-app .
+commit..
+
+$ cd client_src/
+$ npm install --save react-router react-router-dom
+commit..
+
+$ cd client_src/
+$ npm install axios --save
 commit..
