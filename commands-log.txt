@@ -8,3 +8,7 @@ commit..
 
 $ lb model
 commit..
+
+$ npm install -g create-react-app
+$ create-react-app .
+commit..

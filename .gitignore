@@ -17,3 +17,5 @@
 coverage
 node_modules
 npm-debug.log
+client_src/node_modules
+client_src/build
