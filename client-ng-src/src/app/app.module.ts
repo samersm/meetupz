@@ -15,11 +15,12 @@ import { EditMeetupComponent } from './components/edit-meetup/edit-meetup.compon
 
 
 const appRoutes: Routes = [
-  {path:'', component:MeetupsComponent},
-  {path: 'meetups', component:MeetupsComponent},
-  {path:'meetup-item/:id', component:MeetupsComponent},
-  {path: 'add-meetup', component:AddMeetupComponent},
-  {path:'edit-meetup/:id', component:EditMeetupComponent}
+  {path: '', component: MeetupsComponent},
+  {path: 'meetups', component: MeetupsComponent},
+  {path: 'about', component: AboutComponent},
+  {path: 'meetup-item/:id', component: MeetupItemComponent},
+  {path: 'add-meetup', component: AddMeetupComponent},
+  {path: 'edit-meetup/:id', component: EditMeetupComponent}
 ]
 
 @NgModule({
