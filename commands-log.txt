@@ -29,5 +29,18 @@ commit..
 
 $ npm install -g @angular/cli
 $ ng new client-ng-src
-$ cd client-ng-src
+$ cd client-ng-src/
+commit..
+
+$ cd client-ng-src/
+$ mkdir src/app/components
+$ cd src/app/components/
+$ ng g component main
+$ ng g component about
+$ ng g component navbar
+$ ng g component meetup-details
+$ ng g component meetup-item
+$ ng g component meetups
+$ ng g component add-meetup
+$ ng g component edit-meetup
 commit..
