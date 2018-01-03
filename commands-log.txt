@@ -22,3 +22,7 @@ commit..
 $ cd client_src/
 $ npm install axios --save
 commit..
+
+$ cd client_src/
+$ npm run build
+commit..

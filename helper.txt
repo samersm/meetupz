@@ -9,6 +9,3 @@ $ lb3 <AppName>    //To create a new app
         $ lb
 
 $ lb model  //To create a new model
-
-
-* Add React Package Deploying Code

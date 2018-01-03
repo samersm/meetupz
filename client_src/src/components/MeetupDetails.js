@@ -38,7 +38,7 @@ class MeetupDetails extends Component{
     return (
      <div>
        <br />
-       <Link className="btn grey right" to="/">Back</Link>
+       <Link className="btn grey" to="/">Back</Link>
        <h1>{this.state.details.name}</h1>
        <ul className="collection">
         <li className="collection-item">City: {this.state.details.city}</li>
