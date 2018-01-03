@@ -26,3 +26,8 @@ commit..
 $ cd client_src/
 $ npm run build
 commit..
+
+$ npm install -g @angular/cli
+$ ng new client-ng-src
+$ cd client-ng-src
+commit..

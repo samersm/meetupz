@@ -1,0 +1,3 @@
+* Add angular view with materialize css
+* Link Main View Page to loopback
+* Add CRUD Functions with angular
