@@ -22,7 +22,7 @@ export class MeetupsComponent implements OnInit {
       this.meetups = meetups;
       });
   }
-
+}
 
   interface Meetup {
     name: string,
@@ -37,6 +37,3 @@ export class MeetupsComponent implements OnInit {
 // loadUser() {
 //   this.userService.getUser().subscribe(data => this.profile = data);
 // }
-
-
-}
