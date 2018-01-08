@@ -44,3 +44,7 @@ $ ng g component meetups
 $ ng g component add-meetup
 $ ng g component edit-meetup
 commit..
+
+$ cd client-ng-src/
+$ ng g service services/data
+commit..

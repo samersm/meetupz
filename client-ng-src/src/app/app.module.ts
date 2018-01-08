@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpModule } from '@angular/http';
 
 
 import { AppComponent } from './app.component';
@@ -12,6 +13,9 @@ import { MeetupItemComponent } from './components/meetup-item/meetup-item.compon
 import { MeetupsComponent } from './components/meetups/meetups.component';
 import { AddMeetupComponent } from './components/add-meetup/add-meetup.component';
 import { EditMeetupComponent } from './components/edit-meetup/edit-meetup.component';
+
+
+import { DataService } from './services/data.service';
 
 
 const appRoutes: Routes = [
@@ -37,9 +41,10 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
