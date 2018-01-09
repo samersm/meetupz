@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
-// import { RouterModule, Routes } from '@angular/router';
+import { Meetup } from '../../meetup';
 
 @Component({
   selector: 'app-meetups',
@@ -9,7 +9,7 @@ import { DataService } from '../../services/data.service';
 })
 export class MeetupsComponent implements OnInit {
 
-  meetups:Meetup[];
+  meetups: Meetup[];
 
   constructor(private dataService:DataService) {
     console.log('constructor ran..');
@@ -17,27 +17,26 @@ export class MeetupsComponent implements OnInit {
 
   ngOnInit() {
     console.log('ngOnInit ran...');
+    this.getMeetups();
 
-    this.dataService.getMeetups().subscribe((meetups) => {
-      // console.log(meetups);
-      this.meetups = meetups;
-      });
+    // Old Codes & Syntax
+    // this.dataService.getMeetups().subscribe((meetups) => {
+    //   // console.log(meetups);
+    //   this.meetups = meetups;
+    //   });
   }
-  // goToMeetupItemComponent(id) {
-  //   this.router.navigate(['/meetup-item', id]);
-  // }
+
+  getMeetups(): void {
+    this.dataService.getMeetups()
+      .subscribe(meetups => this.meetups = meetups);
+  }
+
 }
 
-  interface Meetup {
-    name: string,
-    city: string,
-    address: string,
-    id: string
-  }
-
-//   constructor(private userService: UserService) {}
-// profile = {};
-//
-// loadUser() {
-//   this.userService.getUser().subscribe(data => this.profile = data);
-// }
+  // Old Codes & Syntax
+  // interface Meetup {
+  //   name: string,
+  //   city: string,
+  //   address: string,
+  //   id: string
+  // }
