@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
+// import { RouterModule, Routes } from '@angular/router';
 
 @Component({
   selector: 'app-meetups',
@@ -22,6 +23,9 @@ export class MeetupsComponent implements OnInit {
       this.meetups = meetups;
       });
   }
+  // goToMeetupItemComponent(id) {
+  //   this.router.navigate(['/meetup-item', id]);
+  // }
 }
 
   interface Meetup {
