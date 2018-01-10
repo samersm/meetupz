@@ -22,7 +22,7 @@ const appRoutes: Routes = [
   {path: '', component: MeetupsComponent},
   {path: 'meetups', component: MeetupsComponent},
   {path: 'about', component: AboutComponent},
-  {path: 'meetup-details/:id', component: MeetupDetailsComponent},
+  {path: 'meetup-item/:id', component: MeetupItemComponent},
   {path: 'add-meetup', component: AddMeetupComponent},
   {path: 'edit-meetup/:id', component: EditMeetupComponent}
 ]
