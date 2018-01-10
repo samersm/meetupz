@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 // import { RouterModule, Routes } from '@angular/router';
+import { Meetup } from '../../meetup';
 
 @Component({
   selector: 'app-meetups',
@@ -9,35 +10,22 @@ import { DataService } from '../../services/data.service';
 })
 export class MeetupsComponent implements OnInit {
 
-  meetups:Meetup[];
+  meetups: Meetup[] = [];
+  errorMessage: string = '';
+  isLoading: boolean = true;
 
-  constructor(private dataService:DataService) {
+  constructor(public dataService:DataService) {
     console.log('constructor ran..');
    }
 
   ngOnInit() {
     console.log('ngOnInit ran...');
 
-    this.dataService.getMeetups().subscribe((meetups) => {
-      // console.log(meetups);
-      this.meetups = meetups;
-      });
+      this.dataService
+        .getAll()
+        .subscribe(
+           /* happy path */ meetups => this.meetups = meetups,
+           /* error path */ e => this.errorMessage = e,
+           /* onCompleted */ () => this.isLoading = false);
   }
-  // goToMeetupItemComponent(id) {
-  //   this.router.navigate(['/meetup-item', id]);
-  // }
 }
-
-  interface Meetup {
-    name: string,
-    city: string,
-    address: string,
-    id: string
-  }
-
-//   constructor(private userService: UserService) {}
-// profile = {};
-//
-// loadUser() {
-//   this.userService.getUser().subscribe(data => this.profile = data);
-// }
