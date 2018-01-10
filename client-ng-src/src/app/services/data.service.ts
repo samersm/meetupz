@@ -1,12 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
+import 'rxjs/add/operator/switchMap';
 
 import { Meetup } from '../meetup';
 
 @Injectable()
 export class DataService {
+  baseUrl = "http://localhost:3000/api/";
 
   constructor(public http: Http) {
     console.log('Data service connected...');
@@ -18,15 +22,20 @@ export class DataService {
      headers.append('Accept', 'application/json');
      return headers;
    }
-   getMeetups() {
-    return this.http.get('http://localhost:3000/api/meetups')
-      .map((res:Response) => res.json());
+   getMeetups(): Observable<Meetup[]> {
+     // in the part we get all the post without filter query, now we need pass the filter
+     let url = this.baseUrl + "/meetups";
+     return this.http.get(url, {headers: this.getHeaders()}).map(res => res.json()).catch(err => {
+
+       return Observable.throw(err);
+     });
     }
    getMeetup(id: string): Observable<Meetup> {
-     let meetup$ = this.http
-      .get(`http://localhost:3000/api/meetups/${id}`, {headers: this.getHeaders()})
-      .map((res:Response) => res.json());
-      return meetup$;
+      let url = `${this.baseUrl}/meetups/${id}`;
+      return this.http.get(url, {headers: this.getHeaders()}).map(res => res.json()).catch(err => {
+
+      return Observable.throw(err);
+      });
     }
 
 }

@@ -10,7 +10,7 @@ import { DataService } from '../../services/data.service';
 })
 export class MeetupDetailsComponent implements OnInit {
   meetups: Meetup;
-  sub:any;
+  meetupId: string = '';
 
   constructor(    public dataService:DataService,
                   public router:Router,
@@ -18,12 +18,20 @@ export class MeetupDetailsComponent implements OnInit {
                 ) { }
 
   ngOnInit() {
-    this.sub = this.route.params.subscribe(params => {
+    this.route.params.switchMap((params: Params) => {
+
       let id = params['id'];
-      console.log('getting meetup with id: ', id);
-      this.dataService
-        .getMeetup(id)
-        .subscribe(meetups => {this.meetups = meetups});
+      this.meetupId = id;
+
+      return this.dataService.getMeetup(id);
+    }).subscribe(response => {
+
+      this.meetups = response;
+
+
+    }, err => {
+
+      console.log(err);
     });
   }
 
