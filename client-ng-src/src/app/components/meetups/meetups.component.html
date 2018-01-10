@@ -4,7 +4,7 @@
     <!-- {{meetupItems}} -->
     <li *ngFor="let meetup of meetups" class="collection-item">
       <!-- <Link to={`/meetups/${this.state.item.id}`}>{this.state.item.name}</Link> -->
-      <a [routerLink]="['/meetup-item', meetup.id]">{{meetup.name}}</a>
+      <a [routerLink]="['/meetup-details', meetup.id]">{{meetup.name}}</a>
     </li>
   </ul>
 </div>
