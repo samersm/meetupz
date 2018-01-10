@@ -18,12 +18,6 @@ export class MeetupsComponent implements OnInit {
   ngOnInit() {
     console.log('ngOnInit ran...');
     this.getMeetups();
-
-    // Old Codes & Syntax
-    // this.dataService.getMeetups().subscribe((meetups) => {
-    //   // console.log(meetups);
-    //   this.meetups = meetups;
-    //   });
   }
 
   getMeetups(): void {
@@ -32,11 +26,3 @@ export class MeetupsComponent implements OnInit {
   }
 
 }
-
-  // Old Codes & Syntax
-  // interface Meetup {
-  //   name: string,
-  //   city: string,
-  //   address: string,
-  //   id: string
-  // }
