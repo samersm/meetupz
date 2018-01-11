@@ -1,4 +1,4 @@
-export interface Meetup {
+export class Meetup {
   name: string;
   city: string;
   address: string;

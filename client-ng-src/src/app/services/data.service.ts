@@ -23,7 +23,7 @@ export class DataService {
      return headers;
    }
    getMeetups(): Observable<Meetup[]> {
-     // in the part we get all the post without filter query, now we need pass the filter
+     // in the part we get all the meetup without filter query, now we need pass the filter
      let url = this.baseUrl + "/meetups";
      return this.http.get(url, {headers: this.getHeaders()}).map(res => res.json()).catch(err => {
 
@@ -36,6 +36,23 @@ export class DataService {
 
       return Observable.throw(err);
       });
+    }
+
+    createMeetup(meetup: Meetup): Observable<any> {
+
+      let url = this.baseUrl + "/meetups";
+      return this.http.post(url, meetup, {headers: this.getHeaders()}).map(res => res.json()).catch(err => {
+
+        return Observable.throw(err);
+      })
+    }
+
+    updateMeetup(meetup: Meetup): Observable<any> {
+
+      let url = this.baseUrl + "/meetups/" + meetup.id
+      return this.http.put(url, meetup, {headers: this.getHeaders()}).map(res => res.json()).catch(err => {
+        return Observable.throw(err);
+      })
     }
 
 }

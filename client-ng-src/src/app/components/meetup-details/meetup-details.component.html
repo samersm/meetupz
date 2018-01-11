@@ -6,7 +6,8 @@
    <li class="collection-item">City: {{meetups.city}}</li>
    <li class="collection-item">Address: {{meetups.address}}</li>
    </ul>
-   <button class="btn">Edit</button>
+   <!-- <button class="btn">Edit</button> -->
+   <a [routerLink]="['/edit-meetup/:id']" class="btn">Edit</a>
 
   <button class="btn red right">Delete</button>
  </div>
