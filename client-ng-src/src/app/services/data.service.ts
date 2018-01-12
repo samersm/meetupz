@@ -10,7 +10,7 @@ import { Meetup } from '../meetup';
 
 @Injectable()
 export class DataService {
-  baseUrl = "http://localhost:3000/api/";
+  baseUrl = "http://localhost:3000/api";
 
   constructor(public http: Http) {
     console.log('Data service connected...');

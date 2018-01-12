@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 // import { RouterModule, Routes } from '@angular/router';
+import { Meetup } from '../../meetup';
 
 @Component({
   selector: 'app-meetups',
@@ -28,12 +29,12 @@ export class MeetupsComponent implements OnInit {
   // }
 }
 
-  interface Meetup {
-    name: string,
-    city: string,
-    address: string,
-    id: string
-  }
+  // interface Meetup {
+  //   name: string,
+  //   city: string,
+  //   address: string,
+  //   id: string
+  // }
 
 //   constructor(private userService: UserService) {}
 // profile = {};
