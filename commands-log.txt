@@ -48,3 +48,8 @@ commit..
 $ cd client-ng-src/
 $ ng g service services/data
 commit..
+
+$ cd client-ng-src/
+$ npm intsall -g loopback-sdk-angular-cli
+$ lb-ng ../server/server.js src/app/services/lb-services.js
+commit..

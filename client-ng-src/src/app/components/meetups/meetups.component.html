@@ -5,6 +5,7 @@
     <li *ngFor="let meetup of meetups" class="collection-item">
       <!-- <Link to={`/meetups/${this.state.item.id}`}>{this.state.item.name}</Link> -->
       <a [routerLink]="['/meetup-details', meetup.id]">{{meetup.name}}</a>
+      <div><span>id: </span>{{meetup.id}}</div>
     </li>
   </ul>
 </div>
